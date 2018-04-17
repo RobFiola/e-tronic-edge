@@ -12,18 +12,18 @@ $(document).ready(function(){
 //       var thisnum=thisid.substr(thisid.length-2,thisid.length-1);
       if(this.value<4){
 
-        $('.feedback').addClass('open');
+        $('.feedback').addClass('show');
       }
           //  $('.opinion').removeClass('open');
     });
   $('#close').click(function(){
    $('.opinion').removeClass('open'); 
-    $('.feedback').removeClass('open');
+    $('.feedback').removeClass('show');
   });
   
   $('#feedback-btn').click(function(e){
    e.preventDefault(); 
     $('.opinion').removeClass('open'); 
-    $('.feedback').removeClass('open'); 
+    $('.feedback').removeClass('show'); 
   });
 });
