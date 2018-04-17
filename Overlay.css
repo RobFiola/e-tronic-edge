@@ -1,83 +1,71 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Claim Your Free 1 Year Waranty</title>
-<meta >
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
-{{ 'Overlay.css' | asset_url | stylesheet_tag }}
-<!--   {{ 'view.css' | asset_url | stylesheet_tag }} -->
-  {{ 'view.js' | asset_url | script_tag }}
-  {{ 'Overlay.js' | asset_url | script_tag }}
-  
-</head>
-<body id="main_body" >
-	
-	
-	
-	
-		<h1><a>Register Your Product</a></h1>
-		<form id="form_6348" class="appnitro"  method="post" action="warranty-submission.php.liquid">
-					<div class="form_description">
-			<h2>Register Your Product</h2>
-			<p></p>
-		</div>						
-			<ul >
-			
-					<li id="li_1" >
-		<label class="description" for="element_1">First Name </label>
-		<div>
-			<input id="element_1" name="element_1" class="element text medium" type="text" maxlength="255" value="" /> 
-		</div> 
-		</li>		<li id="li_2" >
-		<label class="description" for="element_2">Last Name </label>
-		<div>
-			<input id="element_2" name="element_2" class="element text medium" type="text" maxlength="255" value="" /> 
-		</div> 
-		</li>		<li id="li_3" >
-		<label class="description" for="element_3">Email </label>
-		<div>
-			<input id="element_3" name="element_3" class="element text medium" type="text" maxlength="255" value="" required/> 
-		</div> 
-		</li>		
-               <div class="opinion" >
-        <h2>Before you Finish!</h2>
-          <h3>We really appreciate your feedback. Would you please leave a rating on our product.</h3>
-           <span class="rating">
-               <input id="rating5" type="radio" name="rating" value="5" checked>
-               <label id="5" for="rating5" value="5">5</label>
-               <input id="rating4" type="radio" name="rating" value="4">
-               <label id="4" for="rating4">4</label>
-               <input id="rating3" type="radio" name="rating" value="3">
-               <label id="3" for="rating3">3</label>
-              <input id="rating2" type="radio" name="rating" value="2" >
-              <label id="2" for="rating2">2</label>
-              <input id="rating1" type="radio" name="rating" value="1">
-              <label id="1" for="rating1">1</label>
-          </span>
-          
-             <div class="feedback"> 
-               <textarea id="feedback" name="element_4" class="element text medium" maxlength="400" rows="3" cols="75" value="">
-                 Help us by telling us what you found wrong with the product.
-                
-               </textarea>
-               <button id="feedback-btn">Rate</button>
-             </div>
-                 
-                 <div class="close" id="close"><i class="fa fa-times"></i></div>
-        
-    </div>
-			
-					<li class="buttons">
-			    <input type="hidden" name="form_id" value="6348" />
-			    
-				<input id="saveForm" class="button_text" type="submit" name="submit" value="Submit" />
-		</li>
-			</ul>
-		</form>	
-	
+.opinion{
+    visibility: hidden;
+    position: absolute;
+    top:50%;
+    left:50%;
     
-   
-	</body>
-</html>
+transform: translate(-50%, -50%);
+    background-color: aliceblue;
+    padding: 10px;
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2);
+}
+.feedback{
+ visibility:hidden; 
+}
+.open{
+    visibility:visible;
+}
+
+.stars{
+    height: 50px;
+}
+
+.rating {
+  overflow: hidden;
+  vertical-align: bottom;
+  display: inline-block;
+  width: auto;
+  height: 30px;
+}
+
+.rating > input {
+  opacity: 0;
+  margin-right: -100%;
+  padding: 0 20px;
+}
+
+.rating > label {
+  position: relative;
+  display: block;
+  float: right;
+  background: url('star-off-big.png');
+  background-size: 30px 30px;
+}
+
+.rating > label:before {
+  display: block;
+  opacity: 0;
+  content: '';
+  width: 30px;
+  height: 30px;
+  background: url('star-on-big.png');
+  background-size: 30px 30px;
+  transition: opacity 0.2s linear;
+}
+
+.rating > label:hover:before,  .rating > label:hover ~ label:before,  .rating:not(:hover) > :checked ~ label:before { opacity: 1; }
+
+ul{
+ list-style-type:none;
+}
+
+.close{
+ position:absolute;
+  top:5px;
+  right:5px;
+  cursor:pointer;
+ opacity: 0.5; 
+}
+.close:hover{
+  opacity:1;
+}
