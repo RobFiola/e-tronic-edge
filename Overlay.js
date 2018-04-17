@@ -12,7 +12,9 @@ $(document).ready(function(){
         $('.feedback').addClass('show');
       }
         else{
+//            thank you for your feedback
             $('.opinion').removeClass('open'); 
+//            send to amazon after closing
          
         }
     });
@@ -23,6 +25,7 @@ $(document).ready(function(){
   
   $('#feedback-btn').click(function(e){
    e.preventDefault(); 
+//      thank you for your feedback
     $('.opinion').removeClass('open'); 
     $('.feedback').removeClass('show'); 
   });
