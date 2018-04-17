@@ -7,14 +7,14 @@ $(document).ready(function(){
       }
     });
     $("input[name='rating']").click(function(){
-//          var thisid=this.value;
-//       alert(this.value);
-//       var thisnum=thisid.substr(thisid.length-2,thisid.length-1);
       if(this.value<4){
 
         $('.feedback').addClass('show');
       }
-          //  $('.opinion').removeClass('open');
+        else{
+            $('.opinion').removeClass('open'); 
+         
+        }
     });
   $('#close').click(function(){
    $('.opinion').removeClass('open'); 
